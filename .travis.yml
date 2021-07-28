@@ -3,6 +3,9 @@ dist: bionic
 sudo: false
 
 language: python
+arch:
+  - arm64
+  - amd64
 
 # Pre-install packages for the ubuntu distribution
 cache:

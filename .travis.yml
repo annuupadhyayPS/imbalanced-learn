@@ -3,9 +3,6 @@ dist: bionic
 sudo: false
 
 language: python
-arch:
-  - arm64
-  - amd64
 
 # Pre-install packages for the ubuntu distribution
 cache:
@@ -28,6 +25,10 @@ env:
 matrix:
   include:
     - env: PYTHON_VERSION="3.8" TEST_DOC="true" TEST_NUMPYDOC="true"
+      arch: amd64
+    - env: PYTHON_VERSION="3.8" TEST_DOC="true" TEST_NUMPYDOC="true"
+      arch: arm64
+      
 
 install: source build_tools/travis/install.sh
 script: bash build_tools/travis/test_script.sh
